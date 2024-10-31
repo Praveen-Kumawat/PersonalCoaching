@@ -1,0 +1,76 @@
+ <?php 
+        foreach($comments as $cmt){
+            if($cmt['course_id']==$course_data['cid']){
+            ?>
+            <div class="row">
+                <div class="col-md-12 col-lg-6">
+                    <b><i class="fa fa-user-circle p-2" aria-hidden="true"></i><?=$cmt['users']?></b>
+                </div>
+                <div class="col-md-12 col-lg-6 " style="text-align:right; color:#808080; font-size:11px">
+                    <b><?=$cmt['created_at']?></b>
+                </div>
+            </div>
+            <div class="comment bg-light p-2 d-flex" style="padding-left:20px;align-content:center; justify-content:space-between">
+                <p><?=$cmt['comments']?></p>
+                <!-- <form class="delete_cmt_form" method="post"> -->
+                    <!-- <input type="hidden" name="cmt_id" value=""> -->
+                     <?php if(@$_SESSION['user_info']['id']==$cmt['user_id']){ ?>
+                    <button value="<?=$cmt['cmt_id']?>" class="delete_cmt" type="button" style="border:none; background:none;"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    <?php } ?>
+                <!-- </form> -->
+            </div>
+        </div>
+        <?php }} ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        foreach($comments as $cmt){
+                if($cmt['course_id']==$course_data['cid']){
+            $str=<<<"COMMENTS"
+           
+            <div class="row">
+                <div class="col-md-12 col-lg-6">
+                    <b><i class="fa fa-user-circle p-2" aria-hidden="true"></i><?=$cmt[users]?></b>
+</div>
+<div class="col-md-12 col-lg-6 " style="text-align:right; color:#808080; font-size:11px">
+    <b><?=$cmt[created_at]?></b>
+</div>
+</div>
+<div class="comment bg-light p-2 d-flex" style="padding-left:20px;align-content:center; justify-content:space-between">
+    <p><?=$cmt[comments]?></p>
+    <?php if(@$_SESSION[user_info]['id']==$cmt[user_id]){ ?>
+    <button value="<?=$cmt[cmt_id]?>" class="delete_cmt" type="button" style="border:none; background:none;"><i
+            class="fa fa-trash" aria-hidden="true"></i></button>
+
+
+</div>
+</div>
+COMMENTS;
+echo $str;
+}
+
+}

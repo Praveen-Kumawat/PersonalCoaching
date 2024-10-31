@@ -1,0 +1,20 @@
+.courses{
+    width: 50%;
+    display: flex;
+    height: 25vh;   
+    margin: auto;
+    align-items: center;
+    
+}
+/* .btnlinks{
+    width: 100%;
+    align-items: center;
+} */
+.options{
+    justify-content: space-evenly;
+}
+.button{
+    text-decoration: none;
+    padding:1vw;
+    
+}
